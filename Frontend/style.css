@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #f0f8ff;  /* soft light blueish background */
+    transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    transition: color 0.3s;
+}
+
+#menuBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #cce6ff;  /* same soft blue as buttons */
+    padding: 8px 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 100;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.menuButton {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    background-color: #f0f8ff;  /* matches body background*/
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.menuButton:hover {
+    background-color: #99ccff;  /* slightly darker on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#fileSection, #selector, #app {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#audioFolderSection {
+    display: flex;
+    flex-direction: column; /* stack text and select vertically */
+    align-items: center;    /* center horizontally */
+    justify-content: center; /* optional: center vertically if you give it a height */
+    margin-top: 20px;       /* spacing from above */
+}
+
+
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background-color: #cce6ff;  /* soft, natural blue */
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: #99ccff;  /* slightly darker on hover */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#options { margin-top: 20px; }
+#result { font-weight: bold; margin-top: 20px; }
+
+#rightButtons {
+    margin-left: auto; /* pushes the container to the right */
+    display: flex;
+    gap: 5px; /* space between mute and dark mode buttons */
+    margin-right: 40px;
+}
+
+body.dark-mode {
+    background: #141c2a;
+    color: #f0f8ff;
+}
+
+body.dark-mode #menuBar {
+    background: linear-gradient(90deg, #1f2c45, #1a263a); /* dark blue gradient */
+    color: #f0f0f0;
+}
+
+body.dark-mode .menuButton {
+    background-color: #3b4f70;
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+body.dark-mode .menuButton:hover {
+    background-color: #555;
+}
+
+body.dark-mode .button {
+    background-color: #3b4f70; /* bluish dark background */
+    color: #f0f8ff;            /* light text */
+    border: 1px solid #556a8a; /* subtle border */
+}
+
+body.dark-mode .button:hover {
+    background-color: #4c6a8c; /* lighter bluish hover */
+    transform: scale(1.05);    /* subtle grow effect */
+}
+
+body.dark-mode #options button {
+    background-color: #3b4f70;
+    color: #f0f8ff;
+    border: 1px solid #556a8a;
+}
+
+body.dark-mode #options button:hover {
+    background-color: #4c6a8c;
+    transform: scale(1.05);
+    }
+
+    
+body.dark-mode h1 {
+    color: #cce0ff; /* light bluish instead of pure white */
+}
+
+/* Light mode selection */
+#methodSelection button:focus,
+#methodSelection button:active {
+    background-color: #4c6a8c;  /* light blue for selection */
+    color: #cce0ff;
+    transform: scale(1.08);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Dark mode selection */
+body.dark-mode #methodSelection button:focus,
+body.dark-mode #methodSelection button:active {
+    background-color: #cce0ff;;  /* darker bluish for dark mode */
+    color: #4c6a8c;
+    transform: scale(1.08);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}

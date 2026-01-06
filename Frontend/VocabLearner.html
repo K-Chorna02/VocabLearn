@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary Learner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menuBar">
+        <button class="menuButton" onclick="resetApp()">Back to Topics</button>
+        <button class="menuButton" onclick="restartTopic()">Restart Topic</button>
+        <div id="rightButtons">
+            <button id="muteBtn" class="menuButton" onclick="toggleMute()">🔊</button>
+            <button id="darkModeBtn" class="menuButton" >🌙</button>
+         </div>
+    </div>
+
+    <h1>Learn Vocabulary</h1>
+
+    <div id="fileSection">
+        <p>Select your CSV file to start:</p>
+        <input type="file" id="fileInput" accept=".csv" />
+    </div>
+
+    <div id="audioFolderSection">
+        <p>Select the folder where your audio files are stored:</p>
+        <input type="file" id="audioFolder" webkitdirectory directory multiple>
+    </div>
+
+
+    <div id="selector" style="display:none;">
+        <h3>Select topic</h3>
+        <select id="topicSelect"></select>
+
+        <h3>Select subtopic</h3>
+        <select id="subtopicSelect"></select>
+
+        <h3>Select learning method:</h3>
+        <div id="methodSelection">
+            <button class="button smallButton" onclick="chooseMethod('translation')">Translation Quiz</button>
+            <button class="button smallButton" onclick="chooseMethod('reverse')">Reverse Translation</button>
+            <button class="button smallButton" onclick="chooseMethod('spelling')">Spelling / Letter Ordering</button>
+            <button class="button smallButton" onclick="chooseMethod('matching')">Matching</button>
+        </div>
+
+        <br><br>
+        <button class="button" onclick="startLearning()">Start Learning</button>
+    </div>
+
+    <div id="app" style="display:none;">
+        <p id="question"></p>
+        <div id="options"></div>
+        <p id="result"></p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
